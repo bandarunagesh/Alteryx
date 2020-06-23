@@ -1,0 +1,631 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2020.2">
+  <Nodes>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="144" y="54" width="624" height="72" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>This Work flow is Designed to show capabilities to dynamically change the Output Tool Database Connection. This smoothen the process of migrate Development work flows to production systems.</Text>
+          <Font name="Arial" size="9.75" style="0" />
+          <TextColor name="White" />
+          <FillColor r="88" g="167" b="116" />
+          <Shape shape="0" />
+          <Justification Justification="1" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="192" y="138" width="528" height="60" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>1. User Constraints are Used to handle the switch between Development and Production Instances
+2. In the Connection String setting, update %User.TEST% for the Development and %User.PROD% for the production schedule</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="White" />
+          <FillColor r="80" g="100" b="100" />
+          <Shape shape="0" />
+          <Justification Justification="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="779" y="269" width="145.0906" height="149" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Destination</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="20">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="804" y="318" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="18">%User.TEST%</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <TransactionSize>10000</TransactionSize>
+                <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+                <PostSQL />
+                <TableStyle>Quoted</TableStyle>
+                <PreSQL />
+                <TransactionMessages>False</TransactionMessages>
+                <OutputOption>Append</OutputOption>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>%User.TEST%</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="263" y="269" width="469" height="169" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Process</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="11">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="288" y="330" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression><![CDATA[contains([EnglishProductName],"Road") OR 
+contains([EnglishProductName],"Mountain") 
+]]></Expression>
+              <Mode>Custom</Mode>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>Filter Details</AnnotationText>
+              <DefaultAnnotationText>contains([EnglishProductName],"Road") OR 
+contains([EnglishProductName],"Mountai...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="13">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="372" y="318" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="WeightUnitMeasureCode" selected="False" />
+                <SelectField field="SizeUnitMeasureCode" selected="False" />
+                <SelectField field="SpanishProductName" selected="False" />
+                <SelectField field="FrenchProductName" selected="False" />
+                <SelectField field="FinishedGoodsFlag" selected="False" />
+                <SelectField field="SafetyStockLevel" selected="False" />
+                <SelectField field="ReorderPoint" selected="False" />
+                <SelectField field="LargePhoto" selected="False" />
+                <SelectField field="EnglishDescription" selected="False" />
+                <SelectField field="FrenchDescription" selected="False" />
+                <SelectField field="ChineseDescription" selected="False" />
+                <SelectField field="ArabicDescription" selected="False" />
+                <SelectField field="HebrewDescription" selected="False" />
+                <SelectField field="ThaiDescription" selected="False" />
+                <SelectField field="GermanDescription" selected="False" />
+                <SelectField field="JapaneseDescription" selected="False" />
+                <SelectField field="TurkishDescription" selected="False" />
+                <SelectField field="StartDate" selected="False" />
+                <SelectField field="EndDate" selected="False" />
+                <SelectField field="Status" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="15">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="456" y="330" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="ProductSubcategoryKey" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="ProductSubcategoryKey" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Left_ProductAlternateKey" selected="False" input="Left_" />
+                    <SelectField field="Left_ProductSubcategoryKey" selected="False" input="Left_" />
+                    <SelectField field="Right_ProductSubcategoryKey" selected="False" rename="Right_ProductSubcategoryKey" input="Right_" />
+                    <SelectField field="Right_ProductSubcategoryAlternateKey" selected="False" input="Right_" />
+                    <SelectField field="Right_EnglishProductSubcategoryName" selected="True" rename="ProductSubCategory" input="Right_" />
+                    <SelectField field="Right_SpanishProductSubcategoryName" selected="False" input="Right_" />
+                    <SelectField field="Right_FrenchProductSubcategoryName" selected="False" input="Right_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="17">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="552" y="342" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="ProductCategoryKey" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="ProductCategoryKey" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Left_ProductCategoryKey" selected="False" input="Left_" />
+                    <SelectField field="Right_ProductCategoryKey" selected="False" rename="Right_ProductCategoryKey" input="Right_" />
+                    <SelectField field="Right_ProductCategoryAlternateKey" selected="False" input="Right_" />
+                    <SelectField field="Right_EnglishProductCategoryName" selected="True" rename="ProductCategory" input="Right_" />
+                    <SelectField field="Right_SpanishProductCategoryName" selected="False" input="Right_" />
+                    <SelectField field="Right_FrenchProductCategoryName" selected="False" input="Right_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="19">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="648" y="354" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="ProductKey" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="ProductKey" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Left_EnglishProductName" selected="True" rename="ProductName" input="Left_" />
+                    <SelectField field="Right_ProductKey" selected="False" rename="Right_ProductKey" input="Right_" />
+                    <SelectField field="Right_OrderDateKey" selected="False" input="Right_" />
+                    <SelectField field="Right_DueDateKey" selected="False" input="Right_" />
+                    <SelectField field="Right_ShipDateKey" selected="False" input="Right_" />
+                    <SelectField field="Right_CustomerKey" selected="False" input="Right_" />
+                    <SelectField field="Right_PromotionKey" selected="False" input="Right_" />
+                    <SelectField field="Right_CurrencyKey" selected="False" input="Right_" />
+                    <SelectField field="Right_SalesTerritoryKey" selected="False" input="Right_" />
+                    <SelectField field="Right_SalesOrderNumber" selected="False" input="Right_" />
+                    <SelectField field="Right_SalesOrderLineNumber" selected="False" input="Right_" />
+                    <SelectField field="Right_RevisionNumber" selected="False" input="Right_" />
+                    <SelectField field="Right_OrderQuantity" selected="False" input="Right_" />
+                    <SelectField field="Right_UnitPrice" selected="False" input="Right_" />
+                    <SelectField field="Right_ExtendedAmount" selected="False" input="Right_" />
+                    <SelectField field="Right_UnitPriceDiscountPct" selected="False" input="Right_" />
+                    <SelectField field="Right_DiscountAmount" selected="False" input="Right_" />
+                    <SelectField field="Right_ProductStandardCost" selected="False" input="Right_" />
+                    <SelectField field="Right_TaxAmt" selected="False" input="Right_" />
+                    <SelectField field="Right_Freight" selected="False" input="Right_" />
+                    <SelectField field="Right_CarrierTrackingNumber" selected="False" input="Right_" />
+                    <SelectField field="Right_CustomerPONumber" selected="False" input="Right_" />
+                    <SelectField field="Right_OrderDate" selected="False" input="Right_" />
+                    <SelectField field="Right_DueDate" selected="False" input="Right_" />
+                    <SelectField field="Right_ShipDate" selected="False" input="Right_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="54" y="269" width="161" height="477" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Source</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="1">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="79" y="318" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File RecordLimit="" FileFormat="18">odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorksDW;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LHTU05CG7291V8C;Use Encryption for Data=False;Tag with column collation when possible=False|||select * 
+from DimProduct</File>
+              <FormatSpecificOptions>
+                <PreSQL />
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <NoProgress>False</NoProgress>
+                <CacheData>False</CacheData>
+                <TableStyle>Quoted</TableStyle>
+                <ReadUncommitted>False</ReadUncommitted>
+                <PostSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>Source: SQL Server</AnnotationText>
+              <DefaultAnnotationText>Source=.
+Catalog=AdventureWorksDW
+Query=select * 
+from DimProduct</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="ProductKey" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorksDW;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LHTU05CG7291V8C;Use Encryption for Data=False;Tag with column collation when possible=False|||select * &#xA;from DimProduct" type="Int32" />
+                <Field name="ProductAlternateKey" size="25" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorksDW;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LHTU05CG7291V8C;Use Encryption for Data=False;Tag with column collation when possible=False|||select * &#xA;from DimProduct" type="V_WString" />
+                <Field name="ProductSubcategoryKey" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorksDW;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LHTU05CG7291V8C;Use Encryption for Data=False;Tag with column collation when possible=False|||select * &#xA;from DimProduct" type="Int32" />
+                <Field name="WeightUnitMeasureCode" size="3" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorksDW;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LHTU05CG7291V8C;Use Encryption for Data=False;Tag with column collation when possible=False|||select * &#xA;from DimProduct" type="WString" />
+                <Field name="SizeUnitMeasureCode" size="3" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorksDW;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LHTU05CG7291V8C;Use Encryption for Data=False;Tag with column collation when possible=False|||select * &#xA;from DimProduct" type="WString" />
+                <Field name="EnglishProductName" size="50" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorksDW;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LHTU05CG7291V8C;Use Encryption for Data=False;Tag with column collation when possible=False|||select * &#xA;from DimProduct" type="V_WString" />
+                <Field name="SpanishProductName" size="50" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorksDW;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LHTU05CG7291V8C;Use Encryption for Data=False;Tag with column collation when possible=False|||select * &#xA;from DimProduct" type="V_WString" />
+                <Field name="FrenchProductName" size="50" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorksDW;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LHTU05CG7291V8C;Use Encryption for Data=False;Tag with column collation when possible=False|||select * &#xA;from DimProduct" type="V_WString" />
+                <Field name="StandardCost" size="255" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorksDW;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LHTU05CG7291V8C;Use Encryption for Data=False;Tag with column collation when possible=False|||select * &#xA;from DimProduct" type="V_String" />
+                <Field name="FinishedGoodsFlag" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorksDW;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LHTU05CG7291V8C;Use Encryption for Data=False;Tag with column collation when possible=False|||select * &#xA;from DimProduct" type="Bool" />
+                <Field name="Color" size="15" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorksDW;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LHTU05CG7291V8C;Use Encryption for Data=False;Tag with column collation when possible=False|||select * &#xA;from DimProduct" type="V_WString" />
+                <Field name="SafetyStockLevel" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorksDW;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LHTU05CG7291V8C;Use Encryption for Data=False;Tag with column collation when possible=False|||select * &#xA;from DimProduct" type="Int16" />
+                <Field name="ReorderPoint" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorksDW;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LHTU05CG7291V8C;Use Encryption for Data=False;Tag with column collation when possible=False|||select * &#xA;from DimProduct" type="Int16" />
+                <Field name="ListPrice" size="255" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorksDW;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LHTU05CG7291V8C;Use Encryption for Data=False;Tag with column collation when possible=False|||select * &#xA;from DimProduct" type="V_String" />
+                <Field name="Size" size="50" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorksDW;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LHTU05CG7291V8C;Use Encryption for Data=False;Tag with column collation when possible=False|||select * &#xA;from DimProduct" type="V_WString" />
+                <Field name="SizeRange" size="50" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorksDW;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LHTU05CG7291V8C;Use Encryption for Data=False;Tag with column collation when possible=False|||select * &#xA;from DimProduct" type="V_WString" />
+                <Field name="Weight" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorksDW;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LHTU05CG7291V8C;Use Encryption for Data=False;Tag with column collation when possible=False|||select * &#xA;from DimProduct" type="Double" />
+                <Field name="DaysToManufacture" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorksDW;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LHTU05CG7291V8C;Use Encryption for Data=False;Tag with column collation when possible=False|||select * &#xA;from DimProduct" type="Int32" />
+                <Field name="ProductLine" size="2" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorksDW;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LHTU05CG7291V8C;Use Encryption for Data=False;Tag with column collation when possible=False|||select * &#xA;from DimProduct" type="WString" />
+                <Field name="DealerPrice" size="255" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorksDW;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LHTU05CG7291V8C;Use Encryption for Data=False;Tag with column collation when possible=False|||select * &#xA;from DimProduct" type="V_String" />
+                <Field name="Class" size="2" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorksDW;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LHTU05CG7291V8C;Use Encryption for Data=False;Tag with column collation when possible=False|||select * &#xA;from DimProduct" type="WString" />
+                <Field name="Style" size="2" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorksDW;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LHTU05CG7291V8C;Use Encryption for Data=False;Tag with column collation when possible=False|||select * &#xA;from DimProduct" type="WString" />
+                <Field name="ModelName" size="50" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorksDW;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LHTU05CG7291V8C;Use Encryption for Data=False;Tag with column collation when possible=False|||select * &#xA;from DimProduct" type="V_WString" />
+                <Field name="LargePhoto" size="2147483647" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorksDW;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LHTU05CG7291V8C;Use Encryption for Data=False;Tag with column collation when possible=False|||select * &#xA;from DimProduct" type="Blob" />
+                <Field name="EnglishDescription" size="400" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorksDW;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LHTU05CG7291V8C;Use Encryption for Data=False;Tag with column collation when possible=False|||select * &#xA;from DimProduct" type="V_WString" />
+                <Field name="FrenchDescription" size="400" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorksDW;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LHTU05CG7291V8C;Use Encryption for Data=False;Tag with column collation when possible=False|||select * &#xA;from DimProduct" type="V_WString" />
+                <Field name="ChineseDescription" size="400" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorksDW;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LHTU05CG7291V8C;Use Encryption for Data=False;Tag with column collation when possible=False|||select * &#xA;from DimProduct" type="V_WString" />
+                <Field name="ArabicDescription" size="400" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorksDW;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LHTU05CG7291V8C;Use Encryption for Data=False;Tag with column collation when possible=False|||select * &#xA;from DimProduct" type="V_WString" />
+                <Field name="HebrewDescription" size="400" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorksDW;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LHTU05CG7291V8C;Use Encryption for Data=False;Tag with column collation when possible=False|||select * &#xA;from DimProduct" type="V_WString" />
+                <Field name="ThaiDescription" size="400" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorksDW;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LHTU05CG7291V8C;Use Encryption for Data=False;Tag with column collation when possible=False|||select * &#xA;from DimProduct" type="V_WString" />
+                <Field name="GermanDescription" size="400" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorksDW;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LHTU05CG7291V8C;Use Encryption for Data=False;Tag with column collation when possible=False|||select * &#xA;from DimProduct" type="V_WString" />
+                <Field name="JapaneseDescription" size="400" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorksDW;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LHTU05CG7291V8C;Use Encryption for Data=False;Tag with column collation when possible=False|||select * &#xA;from DimProduct" type="V_WString" />
+                <Field name="TurkishDescription" size="400" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorksDW;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LHTU05CG7291V8C;Use Encryption for Data=False;Tag with column collation when possible=False|||select * &#xA;from DimProduct" type="V_WString" />
+                <Field name="StartDate" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorksDW;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LHTU05CG7291V8C;Use Encryption for Data=False;Tag with column collation when possible=False|||select * &#xA;from DimProduct" type="DateTime" />
+                <Field name="EndDate" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorksDW;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LHTU05CG7291V8C;Use Encryption for Data=False;Tag with column collation when possible=False|||select * &#xA;from DimProduct" type="DateTime" />
+                <Field name="Status" size="7" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorksDW;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LHTU05CG7291V8C;Use Encryption for Data=False;Tag with column collation when possible=False|||select * &#xA;from DimProduct" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="14">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="84" y="426" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <CachedCosmeticName />
+              <File RecordLimit="" FileFormat="23">aka:INPUT|||select * 
+from DimProductSubcategory</File>
+              <FormatSpecificOptions>
+                <PreSQL />
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <NoProgress>True</NoProgress>
+                <CacheData>False</CacheData>
+                <TableStyle>Quoted</TableStyle>
+                <ReadUncommitted>False</ReadUncommitted>
+                <PostSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>Source: Reference Data</AnnotationText>
+              <DefaultAnnotationText>aka:INPUT
+Query=select * 
+from DimProductSu...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="ProductSubcategoryKey" source="File: aka:INPUT|||select * &#xA;from DimProductSubcategory" type="Int32" />
+                <Field name="ProductSubcategoryAlternateKey" source="File: aka:INPUT|||select * &#xA;from DimProductSubcategory" type="Int32" />
+                <Field name="EnglishProductSubcategoryName" size="50" source="File: aka:INPUT|||select * &#xA;from DimProductSubcategory" type="V_WString" />
+                <Field name="SpanishProductSubcategoryName" size="50" source="File: aka:INPUT|||select * &#xA;from DimProductSubcategory" type="V_WString" />
+                <Field name="FrenchProductSubcategoryName" size="50" source="File: aka:INPUT|||select * &#xA;from DimProductSubcategory" type="V_WString" />
+                <Field name="ProductCategoryKey" source="File: aka:INPUT|||select * &#xA;from DimProductSubcategory" type="Int32" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="16">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="84.00002" y="522" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <CachedCosmeticName />
+              <File RecordLimit="" FileFormat="23">aka:INPUT|||select * 
+from DimProductCategory</File>
+              <FormatSpecificOptions>
+                <PreSQL />
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <NoProgress>True</NoProgress>
+                <CacheData>False</CacheData>
+                <TableStyle>Quoted</TableStyle>
+                <ReadUncommitted>False</ReadUncommitted>
+                <PostSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>Source: Reference Data</AnnotationText>
+              <DefaultAnnotationText>aka:INPUT
+Query=select * 
+from DimProductCa...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="ProductCategoryKey" source="File: aka:INPUT|||select * &#xA;from DimProductCategory" type="Int32" />
+                <Field name="ProductCategoryAlternateKey" source="File: aka:INPUT|||select * &#xA;from DimProductCategory" type="Int32" />
+                <Field name="EnglishProductCategoryName" size="50" source="File: aka:INPUT|||select * &#xA;from DimProductCategory" type="V_WString" />
+                <Field name="SpanishProductCategoryName" size="50" source="File: aka:INPUT|||select * &#xA;from DimProductCategory" type="V_WString" />
+                <Field name="FrenchProductCategoryName" size="50" source="File: aka:INPUT|||select * &#xA;from DimProductCategory" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="18">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="84.00005" y="630" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <CachedCosmeticName />
+              <File RecordLimit="" FileFormat="23">aka:INPUT|||select * 
+from FactInternetSales</File>
+              <FormatSpecificOptions>
+                <PreSQL />
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <NoProgress>True</NoProgress>
+                <CacheData>False</CacheData>
+                <TableStyle>Quoted</TableStyle>
+                <ReadUncommitted>False</ReadUncommitted>
+                <PostSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>Source: Reference Data</AnnotationText>
+              <DefaultAnnotationText>aka:INPUT
+Query=select * 
+from FactInternet...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="ProductKey" source="File: aka:INPUT|||select * &#xA;from FactInternetSales" type="Int32" />
+                <Field name="OrderDateKey" source="File: aka:INPUT|||select * &#xA;from FactInternetSales" type="Int32" />
+                <Field name="DueDateKey" source="File: aka:INPUT|||select * &#xA;from FactInternetSales" type="Int32" />
+                <Field name="ShipDateKey" source="File: aka:INPUT|||select * &#xA;from FactInternetSales" type="Int32" />
+                <Field name="CustomerKey" source="File: aka:INPUT|||select * &#xA;from FactInternetSales" type="Int32" />
+                <Field name="PromotionKey" source="File: aka:INPUT|||select * &#xA;from FactInternetSales" type="Int32" />
+                <Field name="CurrencyKey" source="File: aka:INPUT|||select * &#xA;from FactInternetSales" type="Int32" />
+                <Field name="SalesTerritoryKey" source="File: aka:INPUT|||select * &#xA;from FactInternetSales" type="Int32" />
+                <Field name="SalesOrderNumber" size="20" source="File: aka:INPUT|||select * &#xA;from FactInternetSales" type="V_WString" />
+                <Field name="SalesOrderLineNumber" source="File: aka:INPUT|||select * &#xA;from FactInternetSales" type="Int16" />
+                <Field name="RevisionNumber" source="File: aka:INPUT|||select * &#xA;from FactInternetSales" type="Int16" />
+                <Field name="OrderQuantity" source="File: aka:INPUT|||select * &#xA;from FactInternetSales" type="Int16" />
+                <Field name="UnitPrice" scale="4" size="21" source="File: aka:INPUT|||select * &#xA;from FactInternetSales" type="FixedDecimal" />
+                <Field name="ExtendedAmount" scale="4" size="21" source="File: aka:INPUT|||select * &#xA;from FactInternetSales" type="FixedDecimal" />
+                <Field name="UnitPriceDiscountPct" source="File: aka:INPUT|||select * &#xA;from FactInternetSales" type="Double" />
+                <Field name="DiscountAmount" source="File: aka:INPUT|||select * &#xA;from FactInternetSales" type="Double" />
+                <Field name="ProductStandardCost" scale="4" size="21" source="File: aka:INPUT|||select * &#xA;from FactInternetSales" type="FixedDecimal" />
+                <Field name="TotalProductCost" scale="4" size="21" source="File: aka:INPUT|||select * &#xA;from FactInternetSales" type="FixedDecimal" />
+                <Field name="SalesAmount" scale="4" size="21" source="File: aka:INPUT|||select * &#xA;from FactInternetSales" type="FixedDecimal" />
+                <Field name="TaxAmt" scale="4" size="21" source="File: aka:INPUT|||select * &#xA;from FactInternetSales" type="FixedDecimal" />
+                <Field name="Freight" scale="4" size="21" source="File: aka:INPUT|||select * &#xA;from FactInternetSales" type="FixedDecimal" />
+                <Field name="CarrierTrackingNumber" size="25" source="File: aka:INPUT|||select * &#xA;from FactInternetSales" type="V_WString" />
+                <Field name="CustomerPONumber" size="25" source="File: aka:INPUT|||select * &#xA;from FactInternetSales" type="V_WString" />
+                <Field name="OrderDate" source="File: aka:INPUT|||select * &#xA;from FactInternetSales" type="DateTime" />
+                <Field name="DueDate" source="File: aka:INPUT|||select * &#xA;from FactInternetSales" type="DateTime" />
+                <Field name="ShipDate" source="File: aka:INPUT|||select * &#xA;from FactInternetSales" type="DateTime" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="11" Connection="True" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="15" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="15" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Join" />
+      <Destination ToolID="17" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="17" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Join" />
+      <Destination ToolID="19" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="19" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Join" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>User</Namespace>
+        <Name>Envirnoment</Name>
+        <Value>PROD</Value>
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>User</Namespace>
+        <Name>TEST</Name>
+        <Value>odb:Provider=SQLOLEDB.1;Password=Testing@143;Persist Security Info=True;User ID=testuser;Initial Catalog=TEST;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Use Encryption for Data=False;Tag with column collation when possible=False|||rept_internetsales</Value>
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>User</Namespace>
+        <Name>PROD</Name>
+        <Value>odb:Provider=SQLOLEDB.1;Password=Testing@143;Persist Security Info=True;User ID=produser;Initial Catalog=PROD;Data Source=.;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Use Encryption for Data=False;Tag with column collation when possible=False|||rept_internetsales</Value>
+        <IsNumeric value="False" />
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>DynamicSQLConnection_InDevOpt3</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

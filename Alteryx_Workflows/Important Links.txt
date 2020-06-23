@@ -1,0 +1,23 @@
+Learning Links:
+https://www.alteryx.com/resources/resource-library/starter-kits
+https://www.alteryx.com/resources/resource-library/predictive-training
+https://help.alteryx.com/current/designer/tools#Constants.htm
+
+Check Your Knowledge on the Alteryx tools:
+https://quizlet.com/462528079/learn
+
+Learn Indepth on each of the Tool:
+https://community.alteryx.com/t5/Alteryx-Designer-Knowledge-Base/Tool-Mastery-Apps-and-Macros/ta-p/35375
+
+
+Quick Links:
+
+https://help.alteryx.com/current/designer/alteryx-file-types
+https://help.alteryx.com/current/designer/build-workflows
+https://help.alteryx.com/current/designer/constants
+https://help.alteryx.com/current/designer/shortcuts-alteryx-designer
+
+
+
+
+
